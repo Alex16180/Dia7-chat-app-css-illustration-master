@@ -1,0 +1,315 @@
+:root {
+  /* ! Primary text */
+  --pale-violet: hsl(
+    276,
+    100%,
+    81%
+  ); /* * subtitulo en la parte superior de la app */
+  --moderate-violet: hsl(276, 55%, 52%); /* * chat a la izquierda */
+  --desaturated-dark-violet: hsl(271, 15%, 43%); /* * chat a la derecha */
+  --grayish-blue: hsl(206, 6%, 79%); /* * texto de marcador de posicion */
+  --very-dark-desaturated-violet: hsl(271, 36%, 24%); /* * titulo principal */
+  --dark-grayish-violet: hsl(270, 7%, 64%); /* * parrafo */
+
+  /* ! Gradients */
+  /* * Estos dos colores son los colores de fondo vibrantes que ve en todo el diseño y se aplican como un degradado lineal */
+  --light-magenta: hsl(293, 100%, 63%);
+  --light-violet: hsl(264, 100%, 61%);
+
+  /* ! Secondary text */
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 20%, 96%); /* * app background */
+  --very-dark-desaturated-violet: hsl(
+    271,
+    36%,
+    24%
+  ); /* * submit button background */
+  --very-light-magenta: hsl(289, 100%, 72%); /* * radio button outline */
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  max-width: 375px;
+  font-family: "Rubik", sans-serif; /* * Weights: 400, 500, 700 */
+  font-size: 16px;
+}
+
+html::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: -o-linear-gradient(
+    bottom,
+    var(--light-violet),
+    var(--light-magenta)
+  );
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(var(--light-violet)),
+    to(var(--light-magenta))
+  );
+  background: linear-gradient(
+    to top,
+    var(--light-violet),
+    var(--light-magenta)
+  );
+  width: 450px;
+  height: 800px;
+  border-bottom-left-radius: 48%;
+  border-bottom-right-radius: 48%;
+  right: 190px;
+  bottom: 110px;
+}
+
+html::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: var(--light-grayish-violet);
+  width: 450px;
+  height: 800px;
+  border-top-left-radius: 48%;
+  border-top-right-radius: 48%;
+  left: 170px;
+  top: 490px;
+}
+
+/* $ Tarjeta */
+
+/* ! Header */
+.card {
+  margin: 50px;
+  border: 10px solid var(--white);
+  -webkit-box-shadow: 0 25px 20px rgb(230, 227, 227);
+  box-shadow: 0 25px 20px rgb(230, 227, 227);
+  border-radius: 25px;
+  background-color: var(--light-grayish-violet);
+}
+
+.card__stat {
+  background: -o-linear-gradient(
+    left,
+    var(--light-violet),
+    var(--light-magenta)
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(var(--light-violet)),
+    to(var(--light-magenta))
+  );
+  background: linear-gradient(
+    to right,
+    var(--light-violet),
+    var(--light-magenta)
+  );
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+  -ms-flex-pack: left;
+  justify-content: left;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 70px;
+  border-radius: 20px 20px 6px 6px;
+  padding-top: 15px;
+}
+
+.fa-chevron-left {
+  color: var(--grayish-blue);
+  font-size: 12px;
+  margin-right: 8px;
+  margin-left: 15px;
+}
+
+.card__client {
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.iphone {
+  background-color: var(--white);
+  width: 150px;
+  height: 30px;
+  border-radius: 0 0 18px 18px;
+  margin-top: -39px;
+  margin-left: -12px;
+  margin-bottom: 10px;
+}
+
+.card__name {
+  margin-left: 10px;
+}
+
+.card__title {
+  color: var(--light-grayish-violet);
+  font-size: 0.75rem;
+}
+
+.card__subtitle {
+  color: var(--pale-violet);
+  font-size: 0.55rem;
+}
+
+.fa-ellipsis-v {
+  color: var(--grayish-blue);
+  margin-left: 25px;
+  font-size: 10px;
+}
+
+/* ! Body */
+.card__body {
+  margin: 20px 10px;
+}
+
+.card__message--left {
+  background-color: hsla(276, 55%, 52%, 0.1);
+  border-radius: 10px 10px 10px 5px;
+  margin-bottom: 10px;
+  width: 145px;
+  font-size: 0.55rem;
+  padding: 10px;
+  padding-right: 8px;
+  color: var(--moderate-violet);
+  font-weight: 500;
+}
+
+.card__dogs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.card__dog {
+  max-width: 44px;
+  border-radius: 12px;
+  margin-left: 8px;
+}
+
+.card__message--right {
+  color: var(--desaturated-dark-violet);
+  font-size: 0.55rem;
+  border-radius: 10px 10px 5px 10px;
+  padding: 10px 0 10px 10px;
+  background-color: var(--white);
+  margin-top: 10px;
+  margin-left: 90px;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card__message--right-short {
+  width: 90px;
+  margin-left: 145px;
+  margin-bottom: 20px;
+}
+
+.card__price {
+  padding: 10px;
+  background: -o-linear-gradient(
+    left,
+    var(--light-magenta),
+    var(--light-violet)
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(var(--light-magenta)),
+    to(var(--light-violet))
+  );
+  background: linear-gradient(
+    to right,
+    var(--light-magenta),
+    var(--light-violet)
+  );
+  border-radius: 10px 10px 10px 5px;
+  width: 185px;
+  margin-bottom: 10px;
+  font-size: 0.6rem;
+  color: var(--pale-violet);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+.card__number {
+  color: var(--white);
+  font-size: 1rem;
+  margin-left: 35px;
+}
+
+.card__number-two {
+  margin-left: 55px;
+}
+
+.circle {
+  font-size: 15px;
+  color: var(--pale-violet);
+  margin-right: 10px;
+}
+
+.card__footer {
+  margin: 10px 10px 15px 10px;
+}
+
+.card__footer-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5px 5px 5px 25px;
+  background-color: var(--white);
+  border-radius: 20px;
+  color: var(--grayish-blue);
+  font-size: 0.7rem;
+}
+
+.fa-chevron-circle-right {
+  font-size: 35px;
+  color: var(--very-dark-desaturated-violet);
+}
+
+/* $ MAIN TEXT */
+
+.main {
+  text-align: center;
+  margin: 30px;
+}
+
+.main__title {
+  font-size: 2.5rem;
+  color: var(--very-dark-desaturated-violet);
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.main__text {
+  color: var(--dark-grayish-violet);
+  line-height: 1.6;
+}
