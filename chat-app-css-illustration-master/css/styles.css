@@ -39,6 +39,22 @@ body {
   font-size: 16px;
 }
 
+@media screen and (min-width: 768px) {
+  body {
+    max-width: 1440px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 100px 180px 0 376px;
+  }
+}
+
 html::before {
   content: "";
   position: absolute;
@@ -62,10 +78,18 @@ html::before {
   );
   width: 450px;
   height: 800px;
-  border-bottom-left-radius: 48%;
-  border-bottom-right-radius: 48%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
   right: 190px;
   bottom: 110px;
+}
+
+@media screen and (min-width: 768px) {
+  html::before {
+    left: -60px;
+    top: 20px;
+    width: 550px;
+  }
 }
 
 html::after {
@@ -79,6 +103,13 @@ html::after {
   border-top-right-radius: 48%;
   left: 170px;
   top: 490px;
+}
+
+@media screen and (min-width: 768px) {
+  html::after {
+    top: 120px;
+    left: 1180px;
+  }
 }
 
 /* $ Tarjeta */
@@ -299,7 +330,15 @@ html::after {
 
 .main {
   text-align: center;
-  margin: 30px;
+  margin-left: 50px;
+  margin-top: -30px;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    text-align: left;
+    max-width: 450px;
+  }
 }
 
 .main__title {
